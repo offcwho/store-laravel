@@ -18,6 +18,7 @@ use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
+use Filament\Support\RawJs;
 use Filament\Tables;
 use Filament\Tables\Columns\ColorColumn;
 use Filament\Tables\Columns\ImageColumn;
@@ -65,7 +66,7 @@ class ProductResource extends Resource
                         ])->columns(2)->columnSpan(2),
                         Section::make('')->schema([
                             TextInput::make('price')
-                                ->numeric()
+                                ->integer()
                                 ->label('Стоимость')
                                 ->maxLength(8)
                                 ->placeholder('999')
